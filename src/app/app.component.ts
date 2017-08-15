@@ -7,5 +7,15 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
-  hero = 'Windstorm';
+  heroes = ['Batman', 'Spider Man', 'Hulk', 'Superman', 'Wonder Woman', 'Iron Man'];
+  myHero = this.heroes[0];
+  hero: Hero = {
+    id: 1,
+    name: 'Batman'
+  };
+}
+
+export class Hero {
+  id: number;
+  name: string;
 }
