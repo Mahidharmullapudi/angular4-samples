@@ -8,14 +8,20 @@ import {Hero} from './hero';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
-  heroes = [
-    new Hero(1, 'Batman'),
-    new Hero(2, 'Spider Man'),
-    new Hero(3, 'Hulk'),
-    new Hero(4, 'Superman'),
-    new Hero(5, 'Wonder Woman'),
-    new Hero(6, 'Iron Man')
-  ];
+  heroes = HEROES;
   hero = new Hero(10, 'Sachin');
   myHero = this.hero;
 }
+
+const HEROES: Hero[] = [
+  {id: 11, name: 'Mr. Nice'},
+  {id: 12, name: 'Narco'},
+  {id: 13, name: 'Bombasto'},
+  {id: 14, name: 'Celeritas'},
+  {id: 15, name: 'Magneta'},
+  {id: 16, name: 'RubberMan'},
+  {id: 17, name: 'Dynama'},
+  {id: 18, name: 'Dr IQ'},
+  {id: 19, name: 'Magma'},
+  {id: 20, name: 'Tornado'}
+];
