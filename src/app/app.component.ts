@@ -9,8 +9,11 @@ import {Hero} from './hero';
 export class AppComponent {
   title = 'Tour of Heroes';
   heroes = HEROES;
-  hero = new Hero(10, 'Sachin');
-  myHero = this.hero;
+  selectedHero: Hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 }
 
 const HEROES: Hero[] = [
@@ -25,3 +28,5 @@ const HEROES: Hero[] = [
   {id: 19, name: 'Magma'},
   {id: 20, name: 'Tornado'}
 ];
+
+
