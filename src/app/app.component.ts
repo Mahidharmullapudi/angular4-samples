@@ -8,22 +8,23 @@ import {HeroDetailService} from './hero-detail/hero-detail.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private heroService: HeroDetailService) {
-  }
-
   title = 'Tour of Heroes';
   heroes: Hero[];
   selectedHero: Hero;
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+  constructor(private heroService: HeroDetailService) {
   }
 
   getHeroesList(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().then(heroes =>
+      this.heroes = heroes);
   }
 
   ngOnInit(): void {
     this.getHeroesList();
+  }
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
   }
 }
